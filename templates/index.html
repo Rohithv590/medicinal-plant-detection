@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medicinal Plant Identification</title>
+</head>
+
+<body>
+
+<h1>Medicinal Plant Identification using AI</h1>
+
+<form action="/predict" method="post" enctype="multipart/form-data">
+
+    <!-- Improved input -->
+    <input type="file" name="image" accept="image/*" required>
+
+    <br><br>
+
+    <button type="submit">Predict</button>
+
+</form>
+
+<br><br>
+
+<!-- Error Display -->
+{% if error %}
+<p style="color:red;"><b>{{ error }}</b></p>
+{% endif %}
+
+<!-- Prediction + Confidence -->
+{% if prediction %}
+<h2>Prediction: {{ prediction }} ({{ confidence }}%)</h2>
+{% endif %}
+
+<!-- Plant Info -->
+{% if info %}
+
+<h2>Plant Name: {{ info.name }}</h2>
+
+<p><b>Scientific Name:</b> {{ info.scientific }}</p>
+
+<p><b>Description:</b> {{ info.description }}</p>
+
+<p><b>Uses:</b> {{ info.uses }}</p>
+
+<p><b>Benefits:</b> {{ info.benefits }}</p>
+
+<p><b>How to Use:</b> {{ info.how }}</p>
+
+{% endif %}
+
+</body>
+</html>

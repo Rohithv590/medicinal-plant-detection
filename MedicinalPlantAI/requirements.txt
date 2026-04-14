@@ -1,0 +1,7 @@
+tensorflow==1.14
+keras==2.2.4
+flask
+opencv-python
+numpy
+pillow
+h5py
